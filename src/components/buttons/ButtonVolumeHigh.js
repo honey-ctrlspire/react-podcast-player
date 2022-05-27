@@ -1,6 +1,6 @@
 import React from 'react';
 
-const VolumeHighBtn = () => {
+export default function ButtonVolumeHigh() {
 	return (
 		<svg
 			focusable="false"
@@ -16,6 +16,4 @@ const VolumeHighBtn = () => {
 			/>
 		</svg>
 	);
-};
-
-export default VolumeHighBtn;
+}

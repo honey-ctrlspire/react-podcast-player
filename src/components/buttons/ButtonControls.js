@@ -10,17 +10,16 @@ import Spinner from '../player/Spinner';
 
 import { PodcastPlayerContext } from '../../contexts/PodcastPlayerContext';
 
-const ControlsView = (props) => {
-	const { handleSwitchControlPlaying } = useContext(PodcastPlayerContext);
-
-	const { load, nowPlaying } = useSelector((state) => state.recordsPlayer);
-
+export default function ButtonControls(props) {
 	const {
-		onSeekForward,
 		onSeekBack,
+		onSeekForward,
 		onPlayerDisabledSeekBack,
 		onPlayerDisabledSeekForward,
 	} = props;
+
+	const { handleSwitchControlPlaying } = useContext(PodcastPlayerContext);
+	const { load, nowPlaying } = useSelector((state) => state.recordsPlayer);
 
 	return (
 		<ButtonGroup>
@@ -51,6 +50,4 @@ const ControlsView = (props) => {
 			</li>
 		</ButtonGroup>
 	);
-};
-
-export default ControlsView;
+}

@@ -7,7 +7,6 @@ export default function NextUpButton({ onOpenQueue }) {
 		<ul className="player-options">
 			<li className="player-options-item">
 				<Button
-					type="button"
 					className="transition-colors hover:bg-athensgray relative p-7 rounded-full queuelist tooltip"
 					data-tooltip="Queue"
 					onClick={onOpenQueue}

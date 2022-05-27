@@ -1,5 +1,5 @@
 import React from 'react';
-import Popper from './Popper';
+import SwitchColorMode from './SwitchColorMode';
 
 // import AddToFavoritesBtn from '../../buttons/ButtonFavorite';
 
@@ -11,7 +11,7 @@ export default function PlayerActions() {
           <AddToFavoritesBtn />
         </li> */}
 				<li className="relative">
-					<Popper />
+					<SwitchColorMode />
 				</li>
 			</ul>
 		</div>

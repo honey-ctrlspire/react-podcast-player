@@ -1,11 +1,9 @@
 import React from 'react';
 
-const ButtonGroup = ({ children }) => {
+export default function ButtonGroup({ children }) {
 	return (
 		<div>
 			<ul className="flex items-center">{children}</ul>
 		</div>
 	);
-};
-
-export default ButtonGroup;
+}

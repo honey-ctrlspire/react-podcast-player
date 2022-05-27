@@ -1,14 +1,13 @@
 import React from 'react';
 import Button from './Button';
 
-const PauseBtn = (props) => {
+export default function ButtonPause({ onPause, disabled }) {
 	return (
 		<Button
 			className="transition-colors hover:bg-athensgray relative p-7 rounded-full is-highlight"
-			type="button"
 			aria-label="Pause"
-			onClick={props.onPause}
-			disabled={props.disabled}
+			onClick={onPause}
+			disabled={disabled}
 		>
 			<svg
 				className="block svg-icon-pause"
@@ -27,6 +26,4 @@ const PauseBtn = (props) => {
 			</svg>
 		</Button>
 	);
-};
-
-export default PauseBtn;
+}

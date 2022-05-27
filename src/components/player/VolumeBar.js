@@ -7,7 +7,7 @@ import VolumeLow from '../buttons/ButtonVolumeLow';
 export default function VolumeBar({ volume, onChangeVolume, onVolumeSwitch }) {
 	return (
 		<div className="flex items-center">
-			<Button type="button" onClick={onVolumeSwitch}>
+			<Button onClick={onVolumeSwitch}>
 				{volume ? <VolumeHigh /> : <VolumeLow />}
 			</Button>
 			<div className="w-85">

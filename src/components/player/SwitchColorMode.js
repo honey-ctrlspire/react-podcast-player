@@ -3,13 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { setMode } from '../../store/reducer/audio';
 
-const PopperBody = ({ changeMode, handleChangeMode }) => {
+const SwitchColorMode = ({ changeMode, handleChangeMode }) => {
 	return (
-		<div
-			className="relative bg-white  rounded text-mineshaft p-16 w-165 shadow-xl
-
- popper-player-mode"
-		>
+		<div className="relative bg-white  rounded text-mineshaft p-16 w-165 shadow-xl popper-player-mode">
 			<label className="flex flex-1 items-center ">
 				<div className="text-14 text-mineshaft  mr-5">Dark mode</div>
 				<div className="flex flex-1 justify-end">
@@ -70,7 +66,7 @@ export default function PopperContainer() {
 				style={{ display: !isOpen ? 'none' : false }}
 			>
 				{isOpen ? (
-					<PopperBody
+					<SwitchColorMode
 						changeMode={changeMode}
 						handleChangeMode={handleChangeMode}
 					/>

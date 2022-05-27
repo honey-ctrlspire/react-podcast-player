@@ -10,7 +10,6 @@ export default function PlaybackSpeed() {
 	return (
 		<div className="relative">
 			<Button
-				type="button"
 				className="transition-colors hover:bg-athensgray relative p-7 rounded-full queuelist tooltip"
 				data-tooltip="Playback speed"
 				onClick={() => isPanelOpen(!openPanel)}

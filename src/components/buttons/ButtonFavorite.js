@@ -1,11 +1,10 @@
 import React from 'react';
 import Button from './Button';
 
-const AddToFavoritesBtn = (props) => {
+export default function ButtonFavorite() {
 	return (
 		<Button
 			className="transition-colors hover:bg-athensgray relative p-7 rounded-full tooltip"
-			type="button"
 			aria-label="Favorite this show"
 			data-tooltip="Add to favourite"
 		>
@@ -26,6 +25,4 @@ const AddToFavoritesBtn = (props) => {
 			</svg>
 		</Button>
 	);
-};
-
-export default AddToFavoritesBtn;
+}

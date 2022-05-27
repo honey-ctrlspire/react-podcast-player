@@ -5,7 +5,6 @@ export default function ButtonPlay({ onPlay, disabled }) {
 	return (
 		<Button
 			className="transition-colors hover:bg-athensgray relative p-7 rounded-full is-highlight"
-			type="button"
 			aria-label="Play"
 			onClick={onPlay}
 			disabled={disabled}
