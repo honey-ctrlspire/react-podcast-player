@@ -1,0 +1,38 @@
+:root {
+	--player-background-color: #fff;
+	--default-border-color: #dedee3;
+	--default-background-color: #fff;
+	--main-text-color: #32323d;
+	--default-hover-color: #efeff2;
+	--popper-background-color: #fff;
+	--switch-active-color: #32323d;
+	--popper-default-text-color: #52525d;
+	--popper-shadow: 0 4px 20px 0 rgba(25, 25, 34, 0.24);
+	--tooltip-background-color: #1c1c25;
+	--slider-track-input: #323232;
+	--queuelist-background-color: #fff;
+	--queuelist-head-border-color: #e5e5e5;
+	--queue-item-active-color: #efeff2;
+	--player-loader-color: #32323d;
+	--cloudcast-queue-action-remove-color: #92929d;
+	--cloudcast-queue-action-remove-color-hover: #42424d;
+}
+
+[data-theme='dark'] {
+	--player-background-color: #23232d;
+	--default-border-color: #32323d;
+	--default-background-color: #191922;
+	--main-text-color: #fff;
+	--default-hover-color: #32323d;
+	--popper-background-color: #32323d;
+	--popper-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.24);
+	--switch-active-color: #ef5466;
+	--tooltip-background-color: #32323d;
+	--slider-track-input: #fff;
+	--queuelist-background-color: #121216;
+	--queuelist-head-border-color: #262626;
+	--queue-item-active-color: #23232d;
+	--player-loader-color: #fff;
+	--cloudcast-queue-action-remove-color: #92929d;
+	--cloudcast-queue-action-remove-color-hover: #fff;
+}

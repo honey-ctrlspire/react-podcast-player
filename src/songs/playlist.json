@@ -2,10 +2,17 @@
 	"feed": [
 		{
 			"id": "1",
-			"podcast": "https://s3.us-west-2.amazonaws.com/cdlonline/file_example_MP3_700KB.mp3",
-      "title": "Sample",
-      "author": "Honey",
-      "cover": "https://thumbnailer.mixcloud.com/unsafe/160x160/extaudio/a/2/1/5/7e8a-1a89-41a3-b54d-31fc3d997326"
+			"url": "https://circuitbread.podbean.com/mf/play/4wxxti/GarySr_PODCASTaudio.mp3",
+			"title": "CB Podcast",
+			"author": "CircuitBread",
+			"cover": "https://thumbnailer.mixcloud.com/unsafe/160x160/extaudio/a/2/1/5/7e8a-1a89-41a3-b54d-31fc3d997326"
+		},
+		{
+			"id": "2",
+			"url": "https://s3.us-west-2.amazonaws.com/cdlonline/file_example_MP3_700KB.mp3",
+			"title": "Sample",
+			"author": "Honey",
+			"cover": "https://thumbnailer.mixcloud.com/unsafe/160x160/extaudio/a/2/1/5/7e8a-1a89-41a3-b54d-31fc3d997326"
 		}
 	]
 }

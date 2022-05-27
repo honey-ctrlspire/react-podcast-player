@@ -1,0 +1,19 @@
+.switch-mode:after {
+	background-color: #fff;
+	border-radius: 50%;
+	content: '';
+	display: block;
+	height: 14px;
+	width: 14px;
+	transition-duration: 0.15s;
+	transition-property: transform;
+}
+
+.switch-mode.is-checked:after {
+	transform: translate3d(16px, 0, 0);
+}
+
+.switch-mode.is-checked {
+	background-color: #32323d;
+	background-color: var(--switch-active-color);
+}

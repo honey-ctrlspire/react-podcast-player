@@ -1,20 +1,19 @@
-// import React from 'react';
-// // import { render } from 'react-dom';
-// import { Provider } from 'react-redux';
-// import store from './store/store';
-import './index.css';
-import AudioPlayer from './components/app/app';
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 
-// const app = () => (
-// 	<Provider store={store}>
-// 		<App />
-// 	</Provider>
-// );
+import App from './App';
+import store from './store';
+import { feed } from './songs/playlist.json';
+import { PodcastPlayerProvider } from './contexts/PodcastPlayerContext';
 
-export { AudioPlayer };
-// render(
-//   <Provider store={ store }>
-//     <App />
-//   </Provider>,
-//   document.getElementById('root')
-// );
+const AudioPlayer = () => (
+	<Provider store={store}>
+		<PodcastPlayerProvider>
+			<App playlist={feed} />
+		</PodcastPlayerProvider>
+	</Provider>
+);
+
+// export { AudioPlayer };
+render(<AudioPlayer />, document.getElementById('root'));

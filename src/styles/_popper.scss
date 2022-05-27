@@ -1,0 +1,9 @@
+.popper[x-placement='top'] .popper-arrow {
+	border-bottom-width: 0;
+	border-top-color: #fff;
+	border-top-color: var(--popper-background-color);
+	bottom: -6px;
+	left: calc(50% - 6px);
+	margin-bottom: 0;
+	margin-top: 0;
+}
