@@ -1,5 +1,5 @@
 import React from 'react';
-import SwitchColorMode from './SwitchColorMode';
+import SwitchColorMode from './player/SwitchColorMode';
 
 // import AddToFavoritesBtn from '../../buttons/ButtonFavorite';
 

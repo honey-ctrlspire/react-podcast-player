@@ -1,26 +1,22 @@
 import { useEffect, useCallback, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import {
-	setLoading,
-	setAudioPlaying,
-	setAudioProgress,
-	setAudioDuration,
-} from '../store/reducer/recordsPlayer';
+import { setRecordsPlayer } from '../store/reducer';
 
 export default function useAudio() {
 	const dispatch = useDispatch();
-	const { audio, recordsPlayer } = useSelector((state) => state);
-	const { playlist, selectedAudio } = audio;
-	const { duration, nowPlaying, load } = recordsPlayer;
+	const { audio } = useSelector((state) => state);
+	const { autoplay, playbackRate, selectedAudio, recordsPlayer } = audio;
+	const { duration, nowPlaying } = recordsPlayer;
 
 	const intervalId = useRef();
 	const audioElement = useRef(document.createElement('audio'));
-	// const [nextPlay, setNextPlay] = useState(false);
 
 	const handleUpdateProgress = useCallback(() => {
 		intervalId.current = setInterval(() => {
-			dispatch(setAudioProgress(audioElement.current.currentTime));
+			const progress = audioElement.current.currentTime;
+
+			dispatch(setRecordsPlayer({ progress }));
 		}, 900);
 	}, [dispatch]);
 
@@ -32,30 +28,33 @@ export default function useAudio() {
 	}, []);
 
 	const handleLoading = useCallback(() => {
-		// dispatch(setLoading());
-	}, []);
+		dispatch(setRecordsPlayer({ load: false }));
+	}, [dispatch]);
 
 	const handlePlay = useCallback(() => {
 		handleUpdateProgress();
 
-		dispatch(setAudioPlaying(true));
+		dispatch(setRecordsPlayer({ nowPlaying: true }));
 	}, [dispatch, handleUpdateProgress]);
 
 	const handlePause = useCallback(() => {
 		handleClearInterval();
-		dispatch(setAudioPlaying(false));
+		dispatch(setRecordsPlayer({ nowPlaying: false }));
 	}, [dispatch, handleClearInterval]);
 
 	const handleCanPlay = useCallback(() => {
-		dispatch(setAudioDuration(audioElement.current.duration));
+		const duration = audioElement.current.duration;
+		dispatch(setRecordsPlayer({ duration }));
 	}, [dispatch]);
 
 	useEffect(() => {
 		audioElement.current.src = selectedAudio.url;
-		audioElement.current.load();
+		audioElement.current.autoplay = autoplay;
+		audioElement.current.playbackRate = playbackRate.value;
 
-		// dispatch(setLoading());
-	}, [selectedAudio]);
+		audioElement.current.load();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [selectedAudio, audioElement]);
 
 	useEffect(() => {
 		audioElement.current.addEventListener('canplay', handleCanPlay);
@@ -63,36 +62,22 @@ export default function useAudio() {
 		audioElement.current.addEventListener('pause', handlePause);
 		audioElement.current.addEventListener('loadedmetadata', handleLoading);
 
-		// loadSrc();
-
-		// return () => {
-		// 	// Clean up the event listeners
-		// 	audioElement.current.removeEventListener('canplay', handleCanPlay);
-		// 	audioElement.current.removeEventListener('play', handlePlay);
-		// 	audioElement.current.removeEventListener('pause', handlePause);
-		// 	audioElement.current.removeEventListener(
-		// 		'loadedmetadata',
-		// 		handleLoading
-		// 	);
-
-		// 	// audioElement.current = null;
-		// };
+		return () => {
+			// Clean up the event listeners
+			audioElement.current.removeEventListener('canplay', handleCanPlay);
+			audioElement.current.removeEventListener('play', handlePlay);
+			audioElement.current.removeEventListener('pause', handlePause);
+			audioElement.current.removeEventListener(
+				'loadedmetadata',
+				handleLoading
+			);
+		};
 	}, [handleCanPlay, handlePlay, handlePause, handleLoading]);
-
-	useEffect(() => {
-		audioElement.current.src = selectedAudio ? selectedAudio.url : '';
-		audioElement.current.load();
-	}, [selectedAudio]);
 
 	function handleSwitchControlPlaying() {
 		if (!audioElement.current.src.length) {
 			return;
 		}
-
-		// audioElement.current.autoplay = true;
-		audioElement.current.playbackRate = 2;
-		// audioElement.current.click();
-		// audioElement.current.play();
 
 		if (nowPlaying) {
 			audioElement.current.pause();
@@ -102,33 +87,21 @@ export default function useAudio() {
 	}
 
 	function handleSetProgress({ holding, translate, barWidth }) {
-		console.log({ holding, translate, barWidth });
-		const progress = ((translate / barWidth) * duration).toFixed(6);
-
 		if (holding) {
-			dispatch(setAudioProgress(parseFloat(progress)));
+			const progress = ((translate / barWidth) * duration).toFixed(6);
+
+			dispatch(setRecordsPlayer({ progress }));
 		}
 	}
 
 	function handleAudioCurrentTime(time) {
 		const progress = (audioElement.current.currentTime = time);
 
-		dispatch(setAudioProgress(progress));
-	}
-
-	function getData(playingShowId) {
-		// eslint-disable-next-line
-		const dataItem = playlist.filter((item) => {
-			if (item.id === playingShowId) {
-				return item;
-			}
-		});
-
-		return Promise.resolve(...dataItem);
+		dispatch(setRecordsPlayer({ progress }));
 	}
 
 	return {
-		audio: audioElement.current,
+		audio: audioElement,
 		audioProps: {
 			handleCanPlay,
 			handlePlay,
@@ -139,7 +112,6 @@ export default function useAudio() {
 			handleUpdateProgress,
 			handleSwitchControlPlaying,
 			handleAudioCurrentTime,
-			getData,
 		},
 	};
 }

@@ -6,7 +6,7 @@ import Play from './ButtonPlay';
 import Pause from './ButtonPause';
 import SeekBack from './ButtonSeekBack';
 import SeekForward from './ButtonSeekForward';
-import Spinner from '../player/Spinner';
+import Spinner from '../Spinner';
 
 import { PodcastPlayerContext } from '../../contexts/PodcastPlayerContext';
 
@@ -19,7 +19,8 @@ export default function ButtonControls(props) {
 	} = props;
 
 	const { handleSwitchControlPlaying } = useContext(PodcastPlayerContext);
-	const { load, nowPlaying } = useSelector((state) => state.recordsPlayer);
+	const { recordsPlayer } = useSelector((state) => state.audio);
+	const { load, nowPlaying } = recordsPlayer;
 
 	return (
 		<ButtonGroup>

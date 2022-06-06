@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setMode } from '../../store/reducer/audio';
+import { setMode } from '../../store/reducer';
 
 const SwitchColorMode = ({ changeMode, handleChangeMode }) => {
 	return (
@@ -27,8 +27,9 @@ const SwitchColorMode = ({ changeMode, handleChangeMode }) => {
 };
 
 export default function PopperContainer() {
-	const { isOpen, changeMode } = useSelector((state) => state.mode);
 	const dispatch = useDispatch();
+	const { mode } = useSelector((state) => state.audio);
+	const { isOpen, changeMode } = mode;
 
 	function setIsOpenPopper() {
 		dispatch(setMode({ isOpen: !isOpen }));

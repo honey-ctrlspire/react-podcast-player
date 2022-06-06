@@ -1,15 +1,16 @@
 import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
 
-import ButtonControls from '../buttons/ButtonControls';
-import { PodcastPlayerContext } from '../../contexts/PodcastPlayerContext';
+import ButtonControls from './buttons/ButtonControls';
+import { PodcastPlayerContext } from '../contexts/PodcastPlayerContext';
 
 export default function Controls() {
 	const { audio, handleAudioCurrentTime } = useContext(PodcastPlayerContext);
-	const { progress } = useSelector((state) => state.recordsPlayer);
+	const { recordsPlayer } = useSelector((state) => state.audio);
+	const { progress } = recordsPlayer;
 
-	function handleSeekForward(sec = 10) {
-		handleAudioCurrentTime(progress + sec);
+	function handleSeekForward() {
+		handleAudioCurrentTime(progress + 15);
 	}
 
 	function handleSeekBack() {
@@ -17,14 +18,14 @@ export default function Controls() {
 	}
 
 	function handlePlayerDisabledSeekBack() {
-		if (audio.currentTime < 15) {
+		if (audio.current.currentTime < 15) {
 			return true;
 		}
 		return false;
 	}
 
 	function handlePlayerDisabledSeekForward() {
-		if (audio.currentTime === audio.duration) {
+		if (audio.current.currentTime === audio.current.duration) {
 			return true;
 		}
 		return false;

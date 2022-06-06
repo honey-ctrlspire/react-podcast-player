@@ -1,4 +1,4 @@
-export default function useAudioTime() {
+export default function useAudioTime({ start, end }) {
 	function secondTime(time) {
 		switch (true) {
 			case time === 0:
@@ -22,7 +22,6 @@ export default function useAudioTime() {
 	}
 
 	function getFullTime() {
-		const { start, end } = props;
 		let remaining = !end ? start : Math.abs(start - end);
 
 		const hour = (hour) => {
@@ -42,5 +41,5 @@ export default function useAudioTime() {
 		);
 	}
 
-	return getFullTime();
+	return { getFullTime };
 }

@@ -4,12 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import NextUpButton from './NextUpButton';
 import QueuePanel from './queue-panel/QueuePanel';
 
-import { setQueue } from '../../store/reducer/queue';
+import { setQueue } from '../store/reducer';
 
 export default function NextUp() {
 	const dispatch = useDispatch();
-	const [isOpenQueue, setOpenQueue] = useState(false);
 	const { playlist } = useSelector((state) => state.audio);
+
+	const [isOpenQueue, setOpenQueue] = useState(false);
 
 	useEffect(() => {
 		dispatch(setQueue(playlist));

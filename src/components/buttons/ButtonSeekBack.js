@@ -4,7 +4,7 @@ import Button from './Button';
 export default function ButtonSeekBack({ disabled, onSeekBack }) {
 	return (
 		<Button
-			className="transition-colors hover:bg-athensgray relative p-7 rounded-full back tooltip"
+			className="transition-colors opacity-50 hover:opacity-100 relative p-7 rounded-full back tooltip"
 			data-tooltip="Сome back"
 			disabled={disabled}
 			onClick={onSeekBack}

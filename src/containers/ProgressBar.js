@@ -1,18 +1,16 @@
 import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
 
-import Time from './Time';
-import { PodcastPlayerContext } from '../../contexts/PodcastPlayerContext';
+import Time from '../components/Time';
+import { PodcastPlayerContext } from '../contexts/PodcastPlayerContext';
 
 export default function ProgressBar(props) {
 	const { onMouseDown, onMouseUp, onMouseOver, onMouseOut, onMouseMove } =
 		props;
 
 	const { handleSetProgress } = useContext(PodcastPlayerContext);
-
-	const { holdProgressBar, recordsPlayer, positionTooltip } = useSelector(
-		(state) => state.audio
-	);
+	const audioState = useSelector((state) => state.audio);
+	const { holdProgressBar, recordsPlayer, positionTooltip } = audioState;
 
 	const { activeBar, holding } = holdProgressBar;
 	const { progress, duration } = recordsPlayer;
@@ -26,7 +24,7 @@ export default function ProgressBar(props) {
 				activeBar ? 'is-active' : 'is-inactive'
 			}`}
 		>
-			<div className="absolute -top-3 text-12 text-mineshaft font-semibold pr-12 right-full">
+			<div className="text-xs text-mineshaft font-semibold pr-12 right-full opacity-50">
 				<Time start={progress} />
 			</div>
 			<div
@@ -35,13 +33,10 @@ export default function ProgressBar(props) {
 				onMouseOut={onMouseOut}
 				onMouseMove={onMouseMove}
 			>
-				<div className="absolute h-full w-full left-0 top-0 bg-mineshaft opacity-10" />
+				<div className="absolute h-full w-full left-0 top-0 opacity-10 bg-mineshaft hover:bg-blueribbon" />
 				<div
-					className="absolute h-full w-0 left-0 top-0 bg-mineshaft"
-					style={{
-						width: `${progressBar + 1}%`,
-						willChange: 'width',
-					}}
+					className="absolute h-full w-0 left-0 top-0 will-change-width max-w-full bg-mineshaft slider-active"
+					style={{ width: `${progressBar}%` }}
 				/>
 				<input
 					type="range"
@@ -60,7 +55,7 @@ export default function ProgressBar(props) {
 					onMouseUp={onMouseUp}
 				/>
 			</div>
-			<div className="absolute -top-3 text-12 text-mineshaft font-semibold pr-12 left-full">
+			<div className="text-xs text-mineshaft font-semibold ml-15 pr-12 left-full opacity-50">
 				-
 				<Time start={progress} end={duration} />
 			</div>

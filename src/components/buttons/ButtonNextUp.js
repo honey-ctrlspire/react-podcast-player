@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Button from '../buttons/Button';
+import Button from './Button';
 
 export default function NextUpButton({ onOpenQueue }) {
 	return (
 		<ul className="player-options">
 			<li className="player-options-item">
 				<Button
-					className="transition-colors hover:bg-athensgray relative p-7 rounded-full queuelist tooltip"
+					className="transition-colors bg-mineshaft-10 hover:bg-mineshaft-20 relative p-7 rounded-10"
 					data-tooltip="Queue"
 					onClick={onOpenQueue}
 				>

@@ -6,8 +6,8 @@ import { CSSTransition } from 'react-transition-group';
 import QueuePanelView from './QueuePanelView';
 import QueuePanelHead from './QueuePanelHead';
 import QueuePanelItem from './QueuePanelItem';
-import { setAudioState } from '../../../store/reducer/audio';
-import { removeFromQueue } from '../../../store/reducer/queue';
+import { setAudioState } from '../../../store/reducer';
+import { removeFromQueue } from '../../../store/reducer';
 
 export default function QueuePanel({ onSwitchQueue, isOpenQueue }) {
 	const dispatch = useDispatch();

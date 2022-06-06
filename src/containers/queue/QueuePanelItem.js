@@ -10,7 +10,6 @@ const QueueItem = (props) => {
 		id,
 		idx,
 		onSwitchControlPlaying,
-		setRadioShowState,
 		onRemoveFromQueue,
 		onPlayQueue,
 		nowPlaying,
@@ -33,7 +32,6 @@ const QueueItem = (props) => {
 				<ButtonPlayQueue
 					id={id}
 					showId={selectedAudioId}
-					onUpdateShowId={setRadioShowState}
 					onSwitchControlPlaying={onSwitchControlPlaying}
 					onPlayQueue={onPlayQueue}
 				/>
