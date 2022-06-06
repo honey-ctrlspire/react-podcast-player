@@ -13,6 +13,9 @@
 		"react-transition-group": "^4.3.0",
 		"redux": "^4.0.4"
 	},
+	"publishConfig": {
+		"@honey-ctrlspire:registry": "https://npm.pkg.github.com"
+	},
 	"scripts": {
 		"start": "react-scripts start && npm run watch:css",
 		"buildx": "react-scripts build",
