@@ -29,7 +29,7 @@ export default function PlaybackSpeed() {
 	return (
 		<div className="flex items-center justify-end relative w-60">
 			<Button
-				className="text-xs transition-colors bg-mineshaft-10 hover:bg-mineshaft-20 relative py-7 px-9  rounded-10"
+				className="text-xs transition-colors bg-mineshaft-10 hover:bg-mineshaft-20 relative py-7 px-9  rounded-10 focus:border-none focus:outline-none"
 				// data-tooltip="Playback playbackRate"
 				onClick={() => isPanelOpen(!openPanel)}
 			>

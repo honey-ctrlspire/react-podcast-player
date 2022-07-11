@@ -10,7 +10,7 @@ const QueueHead = (props) => {
 			<div className="queuelist-close">
 				<button
 					type="button"
-					className="transition-colors hover:bg-athensgray relative p-7 rounded-full tooltip"
+					className="transition-colors hover:bg-athensgray relative p-7 rounded-full tooltip focus:border-none focus:outline-none"
 					aria-label="Close"
 					data-tooltip="Close"
 					onClick={onClose}

@@ -42,7 +42,7 @@ export default function PopperContainer() {
 	return (
 		<div className="relative">
 			<button
-				className={`transition-colors hover:bg-athensgray relative p-7 rounded-full ${
+				className={`transition-colors hover:bg-athensgray relative p-7 rounded-full focus:border-none focus:outline-none ${
 					isOpen ? 'is-active' : 'tooltip'
 				}`}
 				type="button"

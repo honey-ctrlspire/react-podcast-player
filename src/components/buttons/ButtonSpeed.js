@@ -7,7 +7,7 @@ export default function ButtonSpeed(props) {
 	return (
 		<Button
 			onClick={onClick}
-			className={`flex items-center text-emperror text-sm py-14 px-20 text-left w-full hover:bg-mercury ${
+			className={`flex items-center text-emperror text-sm py-14 px-20 text-left w-full hover:bg-mercury focus:border-none focus:outline-none ${
 				selectedValue === value ? 'bg-mercury' : ''
 			}`}
 		>

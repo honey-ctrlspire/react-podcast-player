@@ -32,10 +32,7 @@ function App(_ref) {
     dispatch((0, _reducer.setAudioState)({
       playlist,
       selectedAudio: playlist[0]
-    }));
-    dispatch((0, _reducer.setRecordsPlayer)({
-      load: true
-    }));
+    })); // dispatch(setRecordsPlayer({ load: true }));
   }, [playlist, dispatch]);
   return _react.default.createElement("main", null, _react.default.createElement(_Audio.default, {
     playlist: playlist

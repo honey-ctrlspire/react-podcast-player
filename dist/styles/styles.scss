@@ -12,7 +12,16 @@
 /* @import '_slider.scss'; */
 @import '_tooltip.scss';
 
+.basis-0 {
+	flex-basis: 0px;
+}
+
+.-w-full-2 {
+	width: calc(100% + 2px);
+}
+
 .is-active .slider-active {
+	background-color: #0f62fe;
 	@apply bg-blueribbon;
 }
 

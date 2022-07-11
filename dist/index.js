@@ -3,11 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.AudioPlayer = void 0;
+exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
+var _reactDom = require("react-dom");
 
 var _reactRedux = require("react-redux");
 
@@ -19,7 +19,6 @@ var _PodcastPlayerContext = require("./contexts/PodcastPlayerContext");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import { render } from 'react-dom';
 const AudioPlayer = _ref => {
   let {
     playlist = []
@@ -32,7 +31,6 @@ const AudioPlayer = _ref => {
   })));
 };
 
-exports.AudioPlayer = AudioPlayer;
-AudioPlayer.propTypes = {
-  playlist: _propTypes.default.array
-}; // render(<AudioPlayer />, document.getElementById('root'));
+var _default = AudioPlayer; // render(<AudioPlayer />, document.getElementById('root'));
+
+exports.default = _default;

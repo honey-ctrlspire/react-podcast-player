@@ -20,7 +20,7 @@ function ButtonSpeed(props) {
   } = props;
   return _react.default.createElement(_Button.default, {
     onClick: onClick,
-    className: "flex items-center text-emperror text-sm py-14 px-20 text-left w-full hover:bg-mercury ".concat(selectedValue === value ? 'bg-mercury' : '')
+    className: "flex items-center text-emperror text-sm py-14 px-20 text-left w-full hover:bg-mercury focus:border-none focus:outline-none ".concat(selectedValue === value ? 'bg-mercury' : '')
   }, _react.default.createElement("span", {
     className: "mr-auto"
   }, text), selectedValue === value ? _react.default.createElement("svg", {

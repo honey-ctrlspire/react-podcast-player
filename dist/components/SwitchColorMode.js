@@ -65,7 +65,7 @@ function PopperContainer() {
   return _react.default.createElement("div", {
     className: "relative"
   }, _react.default.createElement("button", {
-    className: "transition-colors hover:bg-athensgray relative p-7 rounded-full ".concat(isOpen ? 'is-active' : 'tooltip'),
+    className: "transition-colors hover:bg-athensgray relative p-7 rounded-full focus:border-none focus:outline-none ".concat(isOpen ? 'is-active' : 'tooltip'),
     type: "button",
     "aria-label": "Favorite this show",
     "data-tooltip": "View mode",

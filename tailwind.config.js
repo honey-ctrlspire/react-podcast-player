@@ -1,6 +1,28 @@
 module.exports = {
-	content: ['./src/**/*.js'],
+	purge: {
+		enabled: true,
+		content: ['./src/**/*.js'],
+	},
 	theme: {
+		colors: {
+			transparent: 'transparent',
+			athensgray: '#EFEFF2',
+			black: '#000000',
+			blueribbon: '#0F62FE',
+			emperror: '#525252',
+			frenchgray: '#C2C2CA',
+			mercury: '#E5E5E5',
+			mineshaft: {
+				default: '#393939',
+				10: 'rgba(57,57,57,0.1)',
+				20: 'rgba(57,57,57,0.2)',
+			},
+			wildsand: '#F4F4F4',
+			white: '#FFFFFF',
+		},
+		backgroundColor: (theme) => ({
+			...theme('colors'),
+		}),
 		spacing: {
 			px: '1px',
 			0: '0',
@@ -43,10 +65,18 @@ module.exports = {
 			'-60': '-3.75rem',
 			'-full-2': 'calc(100% + 2px)',
 		},
+		opacity: {
+			10: '.1',
+			50: '.5',
+			100: '1',
+		},
 		extend: {
 			animation: {
 				spinner: 'circle-button-spinning 0.65s ease infinite',
 			},
+			inset: (theme) => ({
+				...theme('spacing'),
+			}),
 			borderRadius: {
 				10: '0.625rem',
 			},
@@ -58,20 +88,6 @@ module.exports = {
 			},
 			borderWidth: {
 				6: '6px',
-			},
-			colors: {
-				athensgray: '#EFEFF2',
-				black: '#000000',
-				blueribbon: '#0F62FE',
-				emperror: '#525252',
-				frenchgray: '#C2C2CA',
-				mercury: '#E5E5E5',
-				mineshaft: {
-					DEFAULT: '#393939',
-					10: 'rgba(57,57,57,0.1)',
-					20: 'rgba(57,57,57,0.2)',
-				},
-				wildsand: '#F4F4F4',
 			},
 			height: {
 				128: '32rem',
@@ -94,4 +110,13 @@ module.exports = {
 		},
 	},
 	plugins: [],
+	corePlugins: {
+		// ...
+		backdropOpacity: false,
+		backgroundOpacity: false,
+		borderOpacity: false,
+		divideOpacity: false,
+		ringOpacity: false,
+		textOpacity: false,
+	},
 };

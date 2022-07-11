@@ -28,7 +28,7 @@ export default function ProgressBar(props) {
 				<Time start={progress} />
 			</div>
 			<div
-				className="relative grow shrink basis-0 h-2"
+				className="relative flex-grow flex-shrink basis-0 h-2"
 				onMouseOver={onMouseOver}
 				onMouseOut={onMouseOut}
 				onMouseMove={onMouseMove}

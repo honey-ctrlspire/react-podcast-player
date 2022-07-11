@@ -64,7 +64,7 @@ export default function TimeLine() {
 	}
 
 	return (
-		<div className="grow m-auto max-w-500 w-full">
+		<div className="flex-grow m-auto max-w-500 w-full">
 			<ProgressBar
 				onMouseDown={handleMouseDown}
 				onMouseUp={handleMouseUp}

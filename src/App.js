@@ -8,9 +8,10 @@ import './styles/app.css';
 export default function App({ playlist }) {
 	const dispatch = useDispatch();
 
+	console.log({ playlist });
 	useEffect(() => {
 		dispatch(setAudioState({ playlist, selectedAudio: playlist[0] }));
-		dispatch(setRecordsPlayer({ load: true }));
+		// dispatch(setRecordsPlayer({ load: true }));
 	}, [playlist, dispatch]);
 
 	return (

@@ -17,7 +17,7 @@ function ButtonSeekBack(_ref) {
     onSeekBack
   } = _ref;
   return _react.default.createElement(_Button.default, {
-    className: "transition-colors opacity-50 hover:opacity-100 relative p-7 rounded-full back tooltip",
+    className: "transition-colors opacity-50 hover:opacity-100 relative p-7 rounded-full back tooltip focus:border-none focus:outline-none",
     "data-tooltip": "\u0421ome back",
     disabled: disabled,
     onClick: onSeekBack

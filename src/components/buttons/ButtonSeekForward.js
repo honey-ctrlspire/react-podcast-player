@@ -8,7 +8,7 @@ export default function ButtonSeekForward({
 }) {
 	return (
 		<Button
-			className="transition-colors relative p-7 rounded-full forward tooltip opacity-50 hover:opacity-100"
+			className="transition-colors relative p-7 rounded-full forward tooltip opacity-50 hover:opacity-100 focus:border-none focus:outline-none"
 			data-tooltip="Keep tapping to seek faster"
 			onClick={() => onSeekForward(seconds)}
 			disabled={disabled}

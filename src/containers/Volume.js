@@ -35,11 +35,14 @@ export default function Volume() {
 
 	return (
 		<div className="flex items-center pr-25">
-			<Button className="mr-14 w-22 h-17" onClick={handleVolumeSwitch}>
+			<Button
+				className="mr-14 w-22 h-17 focus:border-none focus:outline-none"
+				onClick={handleVolumeSwitch}
+			>
 				{volume ? <VolumeHigh /> : <VolumeLow />}
 			</Button>
 			<div className="w-85">
-				<div className="relative grow shrink basis-0 h-2">
+				<div className="relative flex-grow flex-shrink basis-0 h-2">
 					<div className="absolute h-full w-full left-0 top-0 bg-mineshaft opacity-10" />
 					<div
 						className="absolute h-full w-0 left-0 top-0 bg-mineshaft will-change-width max-w-full"

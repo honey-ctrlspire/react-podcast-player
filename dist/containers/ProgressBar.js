@@ -58,7 +58,7 @@ function ProgressBar(props) {
   }, _react.default.createElement(_Time.default, {
     start: progress
   })), _react.default.createElement("div", {
-    className: "relative grow shrink basis-0 h-2",
+    className: "relative flex-grow flex-shrink basis-0 h-2",
     onMouseOver: onMouseOver,
     onMouseOut: onMouseOut,
     onMouseMove: onMouseMove

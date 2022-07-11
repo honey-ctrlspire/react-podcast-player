@@ -1,5 +1,5 @@
 {
-	"name": "react-podcast-player",
+	"name": "@honey-ctrlspire/react-podcast-player",
 	"version": "0.1.0",
 	"homepage": "",
 	"dependencies": {
@@ -19,10 +19,11 @@
 	"scripts": {
 		"start": "react-scripts start && npm run watch:css",
 		"buildx": "react-scripts build",
+		"eject": "react-scripts eject",
 		"buildy": "rm -rf dist && NODE_ENV=production babel src --out-dir dist --copy-files",
 		"build": "rm -rf dist && NODE_ENV=production webpack --config webpack.config.js",
-		"build:css": "postcss src/styles/styles.scss -o src/styles/app.css",
-		"watch:css": "postcss src/styles/styles.scss -o src/styles/app.css -w",
+		"build:css": "tailwindcss build src/styles/styles.scss -o src/styles/app.css --minify",
+		"watch:css": "postcss -i src/styles/styles.scss -o src/styles/app.css -w",
 		"deploy": "cp ./build/index.html ./build/404.html && gh-pages -d build"
 	},
 	"eslintConfig": {
@@ -46,15 +47,14 @@
 		"@babel/preset-env": "^7.17.10",
 		"@reduxjs/toolkit": "^1.8.1",
 		"autoprefixer": "^9.8.8",
-		"css-loader": "^2.1.1",
-		"file-loader": "^3.0.1",
-		"gh-pages": "^2.1.1",
-		"mini-css-extract-plugin": "^0.8.0",
+		"css-loader": "^3.6.0",
 		"node-sass": "^4.12.0",
 		"postcss-cli": "^9.1.0",
+		"postcss-import": "^14.1.0",
 		"postcss-loader": "^3.0.0",
-		"sass-loader": "^7.2.0",
-		"tailwindcss": "^3.0.24",
+		"sass": "^1.52.2",
+		"sass-loader": "^8.0.2",
+		"tailwindcss": "^1.9.6",
 		"webpack-cli": "^4.9.2"
 	}
 }

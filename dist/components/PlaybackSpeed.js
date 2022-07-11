@@ -53,7 +53,7 @@ function PlaybackSpeed() {
   return _react.default.createElement("div", {
     className: "flex items-center justify-end relative w-60"
   }, _react.default.createElement(_Button.default, {
-    className: "text-xs transition-colors bg-mineshaft-10 hover:bg-mineshaft-20 relative py-7 px-9  rounded-10" // data-tooltip="Playback playbackRate"
+    className: "text-xs transition-colors bg-mineshaft-10 hover:bg-mineshaft-20 relative py-7 px-9  rounded-10 focus:border-none focus:outline-none" // data-tooltip="Playback playbackRate"
     ,
     onClick: () => isPanelOpen(!openPanel)
   }, selectedSpeed), _react.default.createElement(_reactTransitionGroup.CSSTransition, {

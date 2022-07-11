@@ -1,27 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-// import { render } from 'react-dom';
+import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 
 import App from './App';
 import store from './store';
 import { PodcastPlayerProvider } from './contexts/PodcastPlayerContext';
+import { feed } from './config/playlist.json';
 
 const AudioPlayer = ({ playlist = [] }) => {
-	if (!playlist.length) return null;
+	if (!feed.length) return null;
 
 	return (
 		<Provider store={store}>
 			<PodcastPlayerProvider>
-				<App playlist={playlist} />
+				<App playlist={feed} />
 			</PodcastPlayerProvider>
 		</Provider>
 	);
 };
 
-AudioPlayer.propTypes = {
-	playlist: PropTypes.array,
-};
-
-export { AudioPlayer };
-// render(<AudioPlayer />, document.getElementById('root'));
+render(<AudioPlayer />, document.getElementById('root'));

@@ -38,7 +38,7 @@ function AutoPlay() {
   }
 
   return _react.default.createElement(_Button.default, {
-    className: "ml-8 text-xs rounded-10 py-7 px-14 w-full max-w-100 ".concat(autoplay ? 'bg-mineshaft hover:bg-black text-white' : 'bg-mineshaft-10 hover:bg-mineshaft-20 text-mineshaft'),
+    className: "ml-8 text-xs rounded-10 py-7 px-14 w-full max-w-100 focus:border-none focus:outline-none ".concat(autoplay ? 'bg-mineshaft hover:bg-black text-white' : 'bg-mineshaft-10 hover:bg-mineshaft-20 text-mineshaft'),
     onClick: handleChangeAutoPlay
   }, "Autoplay ".concat(autoplay ? 'On' : 'Off'));
 }

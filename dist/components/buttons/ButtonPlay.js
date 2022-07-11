@@ -17,7 +17,7 @@ function ButtonPlay(_ref) {
     disabled
   } = _ref;
   return _react.default.createElement(_Button.default, {
-    className: "transition-colors relative p-7 rounded-full opacity-50 hover:opacity-100",
+    className: "transition-colors relative p-7 rounded-full opacity-50 hover:opacity-100 focus:border-none focus:outline-none",
     "aria-label": "Play",
     onClick: onPlay,
     disabled: disabled

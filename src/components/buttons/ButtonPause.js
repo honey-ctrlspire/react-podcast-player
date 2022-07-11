@@ -4,7 +4,7 @@ import Button from './Button';
 export default function ButtonPause({ onPause, disabled }) {
 	return (
 		<Button
-			className="transition-colors relative p-7 rounded-full opacity-50 hover:opacity-100"
+			className="transition-colors relative p-7 rounded-full opacity-50 hover:opacity-100 focus:border-none focus:outline-none"
 			aria-label="Pause"
 			onClick={onPause}
 			disabled={disabled}

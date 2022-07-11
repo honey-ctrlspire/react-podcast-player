@@ -105,7 +105,7 @@ function TimeLine() {
   }
 
   return _react.default.createElement("div", {
-    className: "grow m-auto max-w-500 w-full"
+    className: "flex-grow m-auto max-w-500 w-full"
   }, _react.default.createElement(_ProgressBar.default, {
     onMouseDown: handleMouseDown,
     onMouseUp: handleMouseUp,

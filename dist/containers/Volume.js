@@ -55,12 +55,12 @@ function Volume() {
   return _react.default.createElement("div", {
     className: "flex items-center pr-25"
   }, _react.default.createElement(_Button.default, {
-    className: "mr-14 w-22 h-17",
+    className: "mr-14 w-22 h-17 focus:border-none focus:outline-none",
     onClick: handleVolumeSwitch
   }, volume ? _react.default.createElement(_ButtonVolumeHigh.default, null) : _react.default.createElement(_ButtonVolumeLow.default, null)), _react.default.createElement("div", {
     className: "w-85"
   }, _react.default.createElement("div", {
-    className: "relative grow shrink basis-0 h-2"
+    className: "relative flex-grow flex-shrink basis-0 h-2"
   }, _react.default.createElement("div", {
     className: "absolute h-full w-full left-0 top-0 bg-mineshaft opacity-10"
   }), _react.default.createElement("div", {
